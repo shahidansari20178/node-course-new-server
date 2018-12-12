@@ -54,6 +54,10 @@ app.get('/about',(req,res)=>
     //res.send("<h3>About site Information</h3>");
     res.render('about.hbs',{title:"My About Page"});
 });
+app.get('/project',(req,res)=>
+       {
+  res.render('project.hbs',{ title:'Our Projects'});
+});
 app.get('/bad',(req,res)=>
 {
     res.send({errorMessage:"Unable to Connect Server"});
