@@ -3,6 +3,7 @@ const hbs=require('hbs');
 const os=require('os');
 const fs=require('fs');
 const user=os.userInfo();
+const port=process.env.PORT || 3000;
 
 var app=express();
 hbs.registerPartials(__dirname+'/views/partials');
@@ -58,9 +59,9 @@ app.get('/bad',(req,res)=>
     res.send({errorMessage:"Unable to Connect Server"});
     
 });
-app.listen(3000,()=>
+app.listen(port,()=>
           {
-    console.log('server is on');
+    console.log(`server is on ${port}`);
 });
 
 //set PATH=%PATH%;C:\Users\lcom131-one\AppData\Roaming\npm;
